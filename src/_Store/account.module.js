@@ -1,4 +1,4 @@
-import { userService } from '../_Model'
+import { userService } from '../_Service'
 import { router } from '../router'
 
 const user = JSON.parse(localStorage.getItem('user'))
