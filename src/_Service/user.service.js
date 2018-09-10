@@ -6,10 +6,10 @@ export const userService = {
   logout
 }
 
-async function login (username, password) {
+async function login(username, password) {
   return { username, password }
 }
 
-function logout () {
+function logout() {
   localStorage.removeItem('user')
 }

@@ -1,12 +1,12 @@
 <template>
-  <div class="hello">
-    <div v-if="!status.loggedIn">
-      <h1>{{ msg }}</h1>
-      <h2>Essential Links</h2> <br>
+  <div class="container">
+    <div class="box" v-if="!status.loggedIn">
+    <h1>Welcom to SA-System </h1>
+         <img src="../assets/images/home.jpg" alt="home">
       <ul>
         <li>
           <router-link to="/login" style="cursor:pointer" class="button is-success">
-              <i class="user plus icon"></i>Login
+              <i class="fa-fas plus icon"></i>Login
           </router-link> 
           <router-link to="/register" style="cursor:pointer" class="button is-primary">
               <i class="user plus icon"></i>Register
@@ -14,36 +14,48 @@
         </li>
       </ul>
     </div>
-    <div v-if="status.loggedIn">
-      <div class="buttons is-centered">
-        <span class="button is-large is-success">Menu01</span>
-        <span class="button is-large is-info">Menu02</span>
-        <span class="button is-large is-danger">Menu03</span>
+    <div  class="box" v-if="status.loggedIn">
+      <div class="buttons ">
+        <span class="button is-large is-success" @click="creProject = !creProject">Create Project</span>
+        <span class="button is-large is-info" @click="creProject = !creProject">Soon..</span>
+        <span class="button is-large is-danger" @click="creProject = !creProject">Soon..</span>
       </div>
     </div>
+    <div v-if="creProject">
+      <create-project></create-project>
+    </div>
+   
   </div>
 </template>
 
 <script>
-/* eslint-disable */ 
+/* eslint-disable */
+
 import { mapState, mapActions } from 'vuex'
+import CreateProject from '../components/CreateProject'
 export default {
   name: 'HelloWorld',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      creProject: false
     }
   },
   computed: {
-      ...mapState('account', ['status'])
+    ...mapState('account', ['status'])
+  },
+  components: {
+    'create-project': CreateProject
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+h1,
+h2 {
+  font-weight: bold;
+  font-size: larger;
 }
 ul {
   list-style-type: none;

@@ -35,22 +35,22 @@ import router from './../../router'
 export default {
   name: 'App',
   data() {
-      return {
-          user: {},
-          errMsg: ''
-      }
+    return {
+      user: {},
+      errMsg: ''
+    }
   },
   methods: {
-      ...mapActions({
-          logout: 'account/logout'
-      }),
-      Logout() {
-        this.logout()
-        router.push('/')
-      }
+    ...mapActions({
+      logout: 'account/logout'
+    }),
+    Logout() {
+      this.logout()
+      router.push('/')
+    }
   },
   computed: {
-      ...mapState('account', ['status'])
+    ...mapState('account', ['status'])
   }
 }
 </script>

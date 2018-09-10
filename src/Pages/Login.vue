@@ -32,40 +32,34 @@
 </template>
 
 <script>
-import {
-    mapState,
-    mapActions
-} from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
-    data() {
-        return {
-            user: {},
-        }
-    },
-    methods: {
-        ...mapActions({
-            clearAlert: 'alert/clear',
-            login: 'account/login',
-            logout: 'account/logout'
-        }),
-        Login() {
-            const {
-                username,
-                password
-            } = this.user;
-            if (username && password) {
-                this.login({
-                    username,
-                    password
-                })
-            }
-        }
-    },
-    computed: {
-        ...mapState('alert', ['message'])
-    },
-    created() {
-        this.logout();
+  data() {
+    return {
+      user: {}
     }
+  },
+  methods: {
+    ...mapActions({
+      clearAlert: 'alert/clear',
+      login: 'account/login',
+      logout: 'account/logout'
+    }),
+    Login() {
+      const { username, password } = this.user
+      if (username && password) {
+        this.login({
+          username,
+          password
+        })
+      }
+    }
+  },
+  computed: {
+    ...mapState('alert', ['message'])
+  },
+  created() {
+    this.logout()
+  }
 }
 </script>
