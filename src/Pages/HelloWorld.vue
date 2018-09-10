@@ -6,6 +6,9 @@
       <li>
         <router-link to="/login" style="cursor:pointer">
             <i class="user plus icon"></i>Login
+        </router-link> <br>
+        <router-link to="/register" style="cursor:pointer">
+            <i class="user plus icon"></i>Register
         </router-link>
       </li>
     </ul>

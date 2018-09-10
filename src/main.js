@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './Pages/_Layout/App'
 import router from './router'
+import Buefy from 'buefy'
 
+Vue.use(Buefy)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
