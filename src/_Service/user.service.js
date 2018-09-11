@@ -1,23 +1,21 @@
 import axios from 'axios'
 // import config from './../config'
-axios.defaults.headers = {
-  'contentType': "application/json; charset=utf-8",
-}
+// axios.defaults.headers = {
+//   'contentType': "application/json; charset=utf-8",
+// }
 export const userService = {
   login,
   logout
 }
 
 async function login(userName, passWord) {
-  try {
-    const { data }  = await axios.post('http://localhost:5000/api/login', {userName, passWord})
-  } catch (e) {
-    console.log( e);
-  }
+  const { data } = await axios.post("http://192.168.0.142:5000/api/login", { userName, passWord }, {
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  });
   
-  let resCode = "", resName = ""
-  resCode = RES.status.code
-  return resCode
+  return data;
 }
 
 function logout() {

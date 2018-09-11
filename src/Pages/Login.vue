@@ -6,7 +6,7 @@
             <article class="card is-rounded">
                 <div class="card-content">
                     <h1 class="title">
-                        <img src="https://placeholdit.imgix.net/~text?txtsize=13&txt=150%C3%9750&w=150&h=50" alt="logo" width="200">
+                        <img src="https://www.logolynx.com/images/logolynx/e5/e5ba79334133d2cb362dd639f755a392.png" alt="logo" width="200">
                     </h1>
                     <p class="control has-icon" style="margin-bottom:10px">
                         <input class="input" v-model="user.username" type="email" placeholder="Email">
@@ -45,10 +45,10 @@ export default {
       login: 'account/login',
       logout: 'account/logout'
     }),
-    Login() {
+    async Login() {
       const { username, password } = this.user
       if (username && password) {
-        this.login({
+        await this.login({
           username,
           password
         })
@@ -59,6 +59,7 @@ export default {
     ...mapState('alert', ['message'])
   },
   created() {
+    this.clearAlert(null)
     this.logout()
   }
 }

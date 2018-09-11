@@ -9,9 +9,8 @@ const actions = {
     commit('loginRequest', { username })
     try {
       const user = await userService.login(username, password)
-      console.log('user',user)
-    //  commit('loginSuccess', user)
-     // router.push('/')
+      commit('loginSuccess', user)
+      router.push('/')
     } catch (error) {
       commit('loginFailure', error)
       dispatch('alert/error', error, { root: true })
