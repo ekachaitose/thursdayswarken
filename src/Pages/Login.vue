@@ -5,8 +5,7 @@
 
             <article class="card is-rounded">
                 <div class="card-content">
-                    <h1 class="title">
-                      
+                    <h1 class="title">                      
                         <img src="https://www.logolynx.com/images/logolynx/e5/e5ba79334133d2cb362dd639f755a392.png" alt="logo" width="200">
                     </h1>
                     <p class="control has-icon" style="margin-bottom:10px">
