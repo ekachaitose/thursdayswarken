@@ -42,7 +42,7 @@ export default {
     }
     , methods:{
         async onSave(){
-            const chksave = this.dataRegister.vUsername === '' || this.dataRegister.vPassword === '' || this.dataRegister.vConfirmPassword === '' ? 'err1' : this.dataRegister.vPassword !== this.dataRegister.vConfirmPassword ? 'err2' : ''
+            const chksave = ((this.dataRegister.vUsername||'') === '') || ((this.dataRegister.vPassword||'') === '') || ((this.dataRegister.vConfirmPassword||'') === '') ? 'err1' : (this.dataRegister.vPassword||'') !== (this.dataRegister.vConfirmPassword||'') ? 'err2' : ''
             if(chksave === '')
             {
                 const param = await userService.register(this.dataRegister)
