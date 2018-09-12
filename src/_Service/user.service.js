@@ -5,7 +5,8 @@ import axios from 'axios'
 // }
 export const userService = {
   login,
-  logout
+  logout,
+  register
 }
 
 async function login(userName, passWord) {
@@ -20,4 +21,14 @@ async function login(userName, passWord) {
 
 function logout() {
   localStorage.removeItem('user')
+}
+
+async function register(dataRegister) {
+  // const { data } = await axios.post("", dataRegister, {
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   }
+  // })
+  // return data
+  return dataRegister
 }
