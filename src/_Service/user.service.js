@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import config from './../config'
 axios.defaults.headers = {
-  'contentType': "application/json; charset=utf-8",
+  'content-Type': "application/json; charset=utf-8",
 }
 export const userService = {
   login,
@@ -10,13 +10,7 @@ export const userService = {
 }
 
 async function login(userName, passWord) {
-  try {
-    const { data } = await axios.post("http://localhost:5000/api/login", { userName, passWord });
-    console.log('e :', data);
-  } catch (error) {
-    console.log('e :', e);
-  }
-  
+  const { data } = await axios.post("http://localhost:5000/api//login", { username:userName, password:passWord });
   return data;
 }
 
