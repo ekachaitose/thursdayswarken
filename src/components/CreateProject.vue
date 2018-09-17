@@ -18,8 +18,12 @@
     <div class="columns">
         <div class="column is-half is-offset-one-quarter">
                 <button class="button is-primary">
-                 CREATE
+                 SAVE
                 </button>
+                <button class="button is-danger">
+                 DELETE
+                </button>
+             
         </div>
     </div>
   
