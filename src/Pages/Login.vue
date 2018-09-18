@@ -61,7 +61,7 @@ export default {
   },
   created() {
     this.clearAlert(null)
-    this.logout()
+    //this.logout()
   }
 }
 </script>

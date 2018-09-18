@@ -14,7 +14,6 @@ const actions = {
       const user = await userService.login(username, password)
       console.log(user)
        commit('loginSuccess', user)
-
       router.push('/')
     } catch (error) {
       console.log(error)
@@ -22,20 +21,19 @@ const actions = {
       dispatch('alert/error', error, { root: true })
     }
   },
-  async register({dispatch,commit}, {username,password}){
-    commit('resgisterRequest', { username })
-    try {
-      const user = await userService.register(username, password)
-      console.log(user)
-       commit('RegisterSuccess', user)
-       router.push('/login')
-    } catch (error) {
-      console.log(error)
-      commit('resgisterFailure', error)
-      dispatch('alert/error', error, { root: true })
-    }
+  // async register({dispatch,commit}, {username,password}){
+  //   commit('resgisterRequest', { username })
+  //   try {
+  //     const register = await userService.register(username, password)
+  //     commit('registerSuccess', register)
+  //      router.push('/login')
+  //   } catch (error) {
+  //     console.log(error)
+  //     commit('resgisterFailure', error)
+  //     dispatch('alert/error', error, { root: true })
+  //   }
 
-  },
+  // },
   logout({ commit }) {
     userService.logout()
     commit('logout')
@@ -60,11 +58,15 @@ const mutations = {
     state.user = null
   },
   resgisterRequest(state,user){
-    state.status = { register: 'success'}
+    state.status = { loggedIn: true }
+    state.user = user
+  },
+  registerSuccess(state, user) {
+    state.status = { loggedIn: true }
     state.user = user
   },
   resgisterFailure(state){
-    state.status = { register: 'failed'}
+    state.status = { user: 'failed'}
    
   }
 }

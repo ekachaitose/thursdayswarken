@@ -18,7 +18,7 @@
       <div class="buttons ">
         <span class="button is-large is-success" @click="creProject = !creProject">Create Project</span>
         <span class="button is-large is-info" @click="creProject = !creProject">Soon..</span>
-        <span class="button is-large is-danger" @click="creProject = !creProject">Soon..</span>
+        <router-link to="/register" style="cursor:pointer" class="button is-large is-info">Register</router-link>
       </div>
     </div>
     <div v-if="creProject">

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import router from './../router'
 
 export const userService = {
   login,
@@ -18,7 +19,6 @@ function logout() {
 
 async function register({userName, passWord}) {
   const { data } = await axios.post("http://localhost:5000/api/users", {"userName":userName,"passWord":passWord},{"headers": { Authorization: localStorage.getItem('token')}})
-  console.log(data)
- 
+  router.push('/login')
 }
 
