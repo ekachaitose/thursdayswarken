@@ -24,7 +24,9 @@
     <div v-if="creProject">
       <create-project></create-project>
     </div>
-   
+   <div class="box" v-if="status.loggedIn && !creProject">
+     <fetch-project></fetch-project>
+   </div>
   </div>
 </template>
 
@@ -33,6 +35,7 @@
 
 import { mapState, mapActions } from 'vuex'
 import CreateProject from '../components/CreateProject'
+import FetchProject from '../components/FetchProject'
 export default {
   name: 'HelloWorld',
   data() {
@@ -45,7 +48,8 @@ export default {
     ...mapState('account', ['status'])
   },
   components: {
-    'create-project': CreateProject
+    'create-project': CreateProject,
+    'fetch-project': FetchProject
   }
 }
 </script>

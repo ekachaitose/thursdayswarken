@@ -50,9 +50,9 @@ export default {
       const { username, password } = this.user
       if (username && password) {
         await this.login({
-          username,
-          password
-        })
+           username,
+           password
+         })
       }
     }
   },
