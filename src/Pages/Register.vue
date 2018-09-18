@@ -45,15 +45,8 @@ export default {
             const chksave = '' // ((this.dataRegister.userName||'') === '') || ((this.dataRegister.passWord||'') === '') || ((this.dataRegister.passWordConfirm||'') === '') ? 'err1' : (this.dataRegister.passWord||'') !== (this.dataRegister.passWordConfirm||'') ? 'err2' : ''
             if(chksave === '')
             {
+              console.log('token',localStorage.getItem('token'))
                 const param = await userService.register(this.dataRegister)
-                
-                // consolr.log(param)
-                // if(param.httpcode === '201' && param.data.status === '201'){
-                //   alert('Success')
-                // }
-                // else{
-                //   alert(param.msgerror)
-                // }
             }
             else if(chksave === 'err1')
                 console.log('กรุณากรอกข้อมูลให้ครบ')
