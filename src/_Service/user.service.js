@@ -16,12 +16,8 @@ function logout() {
   localStorage.removeItem('user')
 }
 
-async function register(dataRegister) {
-  // const { data } = await axios.post("", dataRegister, {
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   }
-  // })
-  // return data
-  return dataRegister
+async function register({userName, passWord}) {
+  const { data } = await axios.post("http://localhost:5000/api/users", {userName, passWord})
+  console.log(data)
+  return data
 }
